@@ -1,0 +1,174 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}
+\usepackage{indentfirst}
+\usepackage[usenames]{color}
+\usepackage{color}
+\usepackage{colortbl}
+
+\usepackage[singlelinecheck=off,center]{caption}
+\usepackage{soul}
+
+\usepackage{cite}
+
+\usepackage[plainpages=false,pdfpagelabels=false]{hyperref}
+\definecolor{linkcolor}{rgb}{0.9,0,0}
+\definecolor{citecolor}{rgb}{0,0.6,0}
+\definecolor{urlcolor}{rgb}{0,0,1}
+\hypersetup{
+    colorlinks, linkcolor={linkcolor},
+    citecolor={citecolor}, urlcolor={urlcolor}
+}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\ketbra}[2]{\ket{#1}\langle#2|}
+
+\begin{document}
+
+\begin{center}
+\Large{{\bf Self-check problems on\\  Quantum information processing}\\{\it Part 1: Basics of Quantum Mechanics}}\\
+\vspace{5pt}
+\large{Last update: \today}
+\end{center}
+
+\subsection*{Problem 1}
+Let $\mathcal{H}$ be a $d$-dimensional Hilbert space.
+Denote it computational basis states as
+\begin{equation}
+	\ket{0} = \begin{bmatrix}
+	1 \\ 0 \\ \vdots \\ 0
+	\end{bmatrix}, \quad 
+	\ket{1} = \begin{bmatrix}
+	0 \\ 1 \\ \vdots \\ 0
+	\end{bmatrix}, \quad
+	\ldots, \quad
+	\ket{d-1} = \begin{bmatrix}
+	0 \\ 0 \\ \vdots \\ 1
+	\end{bmatrix}.
+\end{equation}
+Let
+\begin{equation}
+	\ket{\psi} = \begin{bmatrix}
+		C_0 \\ C_1 \\ \vdots \\C_{d-1}
+	\end{bmatrix}, \quad
+	M = \begin{bmatrix}
+		m_{0,0} & m_{0,1} & \ldots & m_{0,d-1} \\
+		m_{1,0} & m_{1,1} & \ldots & m_{1,d-1} \\		
+		\vdots & \vdots & \ddots & \vdots \\		
+		m_{d-1,0} & m_{d-1,1} & \ldots & m_{d-1,d-1} \\		
+	\end{bmatrix}.
+\end{equation}
+be some matrix.
+
+Check the following facts.
+\begin{enumerate}
+	\item $\bra{i}j\rangle = \delta_{i,j}$, where $\delta_{i,j}$ is Kronecker symbol.
+	\item $\sum_{i=0}^{d-1}\ket{i}\bra{i}={\bf 1}$, where ${\bf 1}$ is the identity matrix.
+	\item $C_i = \bra{i} \psi \rangle$.
+	\item $\ket{\psi}=\sum_{i=0}^{d-1} C_i \ket{i}$.
+	\item $M_{i,j} = \bra{i}M\ket{j}$.
+	\item $M=\sum_{i,j}M_{i,j}\ket{i}\bra{j}$.
+	\item $M\ket{\psi}=\sum_{k,l=0}^{d-1}M_{k,l}C_l\ket{k}$.
+\end{enumerate}
+
+\subsection*{Problem 2}
+Consider standard Pauli matrices
+\begin{equation}
+	\sigma_x = \begin{bmatrix}
+	0 & 1 \\ 1 & 0 \\
+	\end{bmatrix}, \quad
+		\sigma_y = \begin{bmatrix}
+	0 & -{\rm i} \\ {\rm i} & 0 \\
+	\end{bmatrix}, 
+	\sigma_z = \begin{bmatrix}
+		1 & 0 \\ 0 & -1 \\
+	\end{bmatrix}, \quad
+	{\bf 1} = \begin{bmatrix}
+		1 & 0 \\ 0 & 1
+	\end{bmatrix}.
+\end{equation}
+Find their eigenvalues and eigenvectors. 
+Check that each matrix can be represented in the form $\sum_{i=0}^{1}\lambda_i\ket{\psi_i}\bra{\psi_i}$, where $\{\lambda_i\}$ and $\{\ket{\psi_i}\}$ are eigenvalues and eigenvectors correspondingly.
+Pay special attention to non-uniqueness of ${\bf 1}$ spectral decomposition.
+Show the eigenvectors on the Bloch sphere.
+
+\subsection*{Problem 3}
+Let $\{\ket{\psi_i}\}_{i=1}^d$ be a set of orthonormal states ($\bra{\psi_i}\psi_j\rangle=\delta_{i,j}$).
+Check that
+\begin{equation}
+	U = \begin{bmatrix}
+		\ket{\psi_1} & \ket{\psi_2} & \ldots & \ket{\psi_d}
+	\end{bmatrix}
+\end{equation}
+is a unitary matrix.
+Check that a spectral decomposition $M=\sum_{i=1}^d\lambda_i\ket{\psi_i}\bra{\psi_i}$ can be written in the form
+\begin{equation}
+	M = UDU^{\dagger},
+\end{equation}
+where $D$ is diagonal matrix with $D_{i,i}=\lambda_i$
+
+\subsection*{Problem 4}
+Let $f(\xi): \mathbb{R}\rightarrow \mathbb{R}$ be some function.
+Here we would like to extend $f$ on Hermitian matrices.
+Consider a Hermitian matrix $M$ with a spectral decomposition $M=\sum_k \lambda_k \ket{\psi_k}\bra{\psi_k}$.
+Let
+\begin{equation}
+	f(\xi) = \sum_{i=0}^{\infty}C_i\xi^i 
+\end{equation}
+be a Taylor decomposition of $f$.
+Check that
+\begin{equation}
+	f(M) := \sum_{i=0}^{\infty}C_iM^i= \sum_k f(\lambda_k) \ket{\psi_k}\bra{\psi_k}.
+\end{equation}
+
+\subsection*{Problem 5}
+Check that $\ket{\psi(t)}=U(t)\ket{\psi_0}=\exp({-{\rm i}Ht})\ket{\psi_0}$ is solution of the Schroedinger equation
+\begin{equation}
+	{\rm i}\frac{d}{dt}\ket{\psi(t)}=H\ket{\psi(t)}
+\end{equation}
+with initial condition $\ket{\psi(0)}=\ket{\psi_0}$.
+
+\subsection*{Problem 6}
+Consider a Hamiltonian
+\begin{equation}
+	H = \frac{\hbar \omega}{2} \sigma_x
+\end{equation}
+and an initial state
+\begin{equation}
+	\ket{\psi_0} = \begin{bmatrix}
+		1 \\ 0
+	\end{bmatrix}.
+\end{equation}
+\begin{enumerate}
+	\item Find an evolution operator $U(t)$.
+	\item Find an evolution of initial state in the Schroedinger picture $\ket{\psi(t)}$. Show it on the Bloch sphere.
+	\item Find an evolution of mean value of $\sigma_z$.
+	\item Find an evolution of $\sigma_z$ in the Heisenberg picture $\sigma_z^H(t)$. Express it in terms of other Pauli matrices. 
+	\item Check that both pictures provide the same mean value of $\sigma_z$.
+\end{enumerate}
+
+\iffalse
+\subsection*{Problem 5}
+Let
+\begin{equation}
+	\rho = \begin{bmatrix}
+		\rho_{00} & \rho_{01} & \rho_{02} & \rho_{03} \\
+		\rho_{10} & \rho_{11} & \rho_{12} & \rho_{13} \\
+		\rho_{20} & \rho_{21} & \rho_{22} & \rho_{23} \\
+		\rho_{30} & \rho_{31} & \rho_{32} & \rho_{33} \\
+	\end{bmatrix}
+\end{equation}
+be a two-qubit density matrix.
+\begin{enumerate}
+	\item Check that $\bra{i,j=0}^{d}\rho\ket{k,l}=\rho_{{\rm bin}(i,j){\rm bin}(k,l)}$
+\end{enumerate}
+\fi 
+
+\end{document}
