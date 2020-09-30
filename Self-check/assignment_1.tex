@@ -29,6 +29,7 @@
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\bra}[1]{\langle#1|}
 \newcommand{\ketbra}[2]{\ket{#1}\langle#2|}
+\newcommand{\tr}{\ensuremath{{\rm Tr}}}
 
 \begin{document}
 
@@ -78,6 +79,7 @@ Check the following facts.
 	\item $M\ket{\psi}=\sum_{k,l=0}^{d-1}M_{k,l}C_l\ket{k}$.
 \end{enumerate}
 
+
 \subsection*{Problem 2}
 Consider standard Pauli matrices
 \begin{equation}
@@ -99,6 +101,7 @@ Check that each matrix can be represented in the form $\sum_{i=0}^{1}\lambda_i\k
 Pay special attention to non-uniqueness of ${\bf 1}$ spectral decomposition.
 Show the eigenvectors on the Bloch sphere.
 
+
 \subsection*{Problem 3}
 Let $\{\ket{\psi_i}\}_{i=1}^d$ be a set of orthonormal states ($\bra{\psi_i}\psi_j\rangle=\delta_{i,j}$).
 Check that
@@ -114,6 +117,7 @@ Check that a spectral decomposition $M=\sum_{i=1}^d\lambda_i\ket{\psi_i}\bra{\ps
 \end{equation}
 where $D$ is diagonal matrix with $D_{i,i}=\lambda_i$
 
+
 \subsection*{Problem 4}
 Let $f(\xi): \mathbb{R}\rightarrow \mathbb{R}$ be some function.
 Here we would like to extend $f$ on Hermitian matrices.
@@ -128,12 +132,14 @@ Check that
 	f(M) := \sum_{i=0}^{\infty}C_iM^i= \sum_k f(\lambda_k) \ket{\psi_k}\bra{\psi_k}.
 \end{equation}
 
+
 \subsection*{Problem 5}
 Check that $\ket{\psi(t)}=U(t)\ket{\psi_0}=\exp({-{\rm i}Ht})\ket{\psi_0}$ is solution of the Schroedinger equation
 \begin{equation}
 	{\rm i}\frac{d}{dt}\ket{\psi(t)}=H\ket{\psi(t)}
 \end{equation}
 with initial condition $\ket{\psi(0)}=\ket{\psi_0}$.
+
 
 \subsection*{Problem 6}
 Consider a Hamiltonian
@@ -154,21 +160,94 @@ and an initial state
 	\item Check that both pictures provide the same mean value of $\sigma_z$.
 \end{enumerate}
 
-\iffalse
-\subsection*{Problem 5}
-Let
+
+\subsection*{Problem 7}
+Check that making a Hamiltonian transformation
 \begin{equation}
-	\rho = \begin{bmatrix}
+	H \rightarrow H + \alpha {\bf I},
+\end{equation}
+where $\alpha$ is real and ${\bf I}$ is identity matrix of corresponding dimension, results in acquiring additional phase for the evolution operator.
+Show that this phase does not affect the result of evolution of a density matrix.
+
+
+\subsection*{Problem 8}
+Let $\{\ket{n}_{A}\}_{n=0}^{d_{A}-1}$ and $\{\ket{m}_{B}\}_{m=0}^{d_{B}-1}$ be computational bases of finite-dimensional Hilbert spaces $\mathcal{H}_{A}$ and $\mathcal{H}_{B}$ ($d_{A}$ and $d_{B}$ are corresponding dimensions).
+Write an expression for position of unit element inside the vector $\ket{i}_{A}\otimes \ket{j}_{B}$ in terms of $i$ and $j$.
+Check applicability your result for two-qubit case considered in the lectures.
+
+
+\subsection*{Problem 9}
+Consider a two qubit state with density matrix
+\begin{equation}
+	\rho_{AB} = \begin{bmatrix}
 		\rho_{00} & \rho_{01} & \rho_{02} & \rho_{03} \\
 		\rho_{10} & \rho_{11} & \rho_{12} & \rho_{13} \\
 		\rho_{20} & \rho_{21} & \rho_{22} & \rho_{23} \\
 		\rho_{30} & \rho_{31} & \rho_{32} & \rho_{33} \\
-	\end{bmatrix}
+	\end{bmatrix} =
+	\begin{bmatrix}
+		X & Y \\
+		Z & W
+	\end{bmatrix},
 \end{equation}
-be a two-qubit density matrix.
-\begin{enumerate}
-	\item Check that $\bra{i,j=0}^{d}\rho\ket{k,l}=\rho_{{\rm bin}(i,j){\rm bin}(k,l)}$
-\end{enumerate}
-\fi 
+where
+\begin{equation}
+	X = 	\begin{bmatrix}
+		\rho_{00} & \rho_{01} \\
+		\rho_{10} & \rho_{11}
+	\end{bmatrix}, \quad
+	Y = 	\begin{bmatrix}
+		\rho_{02} & \rho_{03} \\
+		\rho_{12} & \rho_{13}
+	\end{bmatrix}, \quad
+	Z = 	\begin{bmatrix}
+		\rho_{20} & \rho_{21} \\
+		\rho_{30} & \rho_{31}
+	\end{bmatrix}, \quad
+	W = 	\begin{bmatrix}
+		\rho_{22} & \rho_{23} \\
+		\rho_{32} & \rho_{33}
+	\end{bmatrix}.
+\end{equation}
+Show that
+\begin{equation}
+	\rho_{A} = \tr_{B}\rho_{AB} = 
+	\begin{bmatrix}
+		\tr X & \tr Y \\
+		\tr Z & \tr W
+	\end{bmatrix}, \quad
+	\rho_{B} = \tr_{A}\rho_{AB}  = X+W.
+\end{equation}
+
+
+\subsection*{Problem 9}
+Consider three-qubit W-state\footnote{Note that this kind of states appears in Rydberg blockade.}
+\begin{equation}
+	\ket{{\rm W}}_{ABC} = \frac{1}{\sqrt{3}}(\ket{100}_{ABC} + \ket{010}_{ABC} + \ket{001}_{ABC}).
+\end{equation}
+Write its Schmidt decomposition with respect to bipartite partitioning $A:BC$ (consider qubits $B$ and $C$ as single object).
+What is a Schmidt rank of the resulting decomposition? 
+Show that $A$ is not maximally entangled with $BC$.
+Design a three-qubit state $\ket{\Psi}_{ABC}$ where the first qubit $A$ is maximally entangled with a pair $BC$.
+
+
+\subsection*{Problem 10}
+Consider the following two-qubit states:
+\begin{equation} \label{eq:states-for-purification}
+	\rho_1= \frac{{\bf 1}}{2}\otimes \frac{{\bf 1}}{2}, \quad \rho_{2}=\frac{1}{2}(\ket{00}\bra{00}+\ket{11}\bra{11}), \quad \rho_{3}=\ket{\Phi^{+}}\bra{\Phi^{+}},
+\end{equation}
+where $\ket{\Phi^{+}}=2^{-1/2}(\ket{00}+\ket{11})$.
+Check that reduced state of both qubits coincide for all three states.
+Find mean values of observables
+\begin{equation}
+	\sigma_{z}^{A}\equiv \sigma_{z}\otimes {\bf 1}, \quad \sigma_{z}^{B}\equiv {\bf 1}\otimes  \sigma_{z}, \quad \sigma_{z}\otimes\sigma_{z}, \quad \sigma_{x}\otimes\sigma_{x},
+\end{equation}
+for each state $\rho_{i}$.
+
+
+\subsection*{Problem 11}
+Find purifications of all three states~\eqref{eq:states-for-purification}.
+Do the state of ancillary purifying system (``environment'') correlate with the purified state?
+
 
 \end{document}
