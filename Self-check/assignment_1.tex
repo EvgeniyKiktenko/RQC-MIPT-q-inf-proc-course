@@ -236,7 +236,10 @@ Consider the following two-qubit states:
 \begin{equation} \label{eq:states-for-purification}
 	\rho_1= \frac{{\bf 1}}{2}\otimes \frac{{\bf 1}}{2}, \quad \rho_{2}=\frac{1}{2}(\ket{00}\bra{00}+\ket{11}\bra{11}), \quad \rho_{3}=\ket{\Phi^{+}}\bra{\Phi^{+}},
 \end{equation}
-where $\ket{\Phi^{+}}=2^{-1/2}(\ket{00}+\ket{11})$.
+where
+\begin{equation} \label{eq:phiplus}
+	\ket{\Phi^{+}}=\frac{1}{\sqrt{2}}(\ket{00}+\ket{11}).
+\end{equation}
 Check that reduced state of both qubits coincide for all three states.
 Find mean values of observables
 \begin{equation}
@@ -252,6 +255,17 @@ Do the state of ancillary purifying system (``environment'') correlate with the 
 
 \subsection*{Problem 13}
 Show that mixture of mixed separable states is also mixed separable state.
+
+
+\subsection*{Problem 14}
+Consider maximally entangled state $\ket{\Phi^{+}}$ from Eq.~\eqref{eq:phiplus}.
+Write $\rho=\ket{\Phi^{+}}\bra{\Phi^{+}}$ in the form
+\begin{equation}
+	\rho = \sum_{i} p_{i} \rho_{A}^{(i)} \otimes \rho_{B}^{(i)}, \quad p_{i}\geq 0, \quad \sum_{i}p_{i}=1,
+\end{equation}
+where $\rho_{A}^{(i)}$ and $\rho_{B}^{(i)}$ are \emph{arbitrary} $2\times2$ matrices.
+Remember definition of separable mixed states. 
+Draw conclusions :-)
 
 
 \end{document}
