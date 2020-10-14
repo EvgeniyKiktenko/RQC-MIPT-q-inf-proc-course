@@ -1,0 +1,70 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}
+\usepackage{indentfirst}
+\usepackage[usenames]{color}
+\usepackage{color}
+\usepackage{colortbl}
+
+\usepackage[singlelinecheck=off,center]{caption}
+\usepackage{soul}
+
+\usepackage{cite}
+
+\usepackage[plainpages=false,pdfpagelabels=false]{hyperref}
+\definecolor{linkcolor}{rgb}{0.9,0,0}
+\definecolor{citecolor}{rgb}{0,0.6,0}
+\definecolor{urlcolor}{rgb}{0,0,1}
+\hypersetup{
+    colorlinks, linkcolor={linkcolor},
+    citecolor={citecolor}, urlcolor={urlcolor}
+}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\ketbra}[2]{\ket{#1}\langle#2|}
+\newcommand{\tr}{\ensuremath{{\rm Tr}}}
+
+\begin{document}
+
+\begin{center}
+\Large{{\bf Self-check problems on\\  Quantum information processing}\\{\it Part 2: Measurements and evolution}}\\
+\vspace{5pt}
+\large{Last update: \today}
+\end{center}
+
+\subsection*{Problem 1}
+Consider a qubit in arbitrary pure state $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$, and a ``probe'', which is also a qubit, in the initial state $\ket{0}$.
+Let the first qubit and the probe interact according to Hamiltonian 
+\begin{equation}
+	V=\frac{1}{2}\sigma_{z}\otimes\sigma_{y}
+\end{equation} 
+for time $t$.
+Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (projection on $x$-axis).
+\begin{enumerate}
+	\item Find the probabilities of obtaining outcomes +1, and -1, corresponding ``collapsed'' states of the first qubit.
+	\item Find the state of the first qubit without information about the measurement outcome of the first probe.
+	\item Write down a POVM that corresponds to this such indirect measurement. At which values of $t$ the measurement becomes projective von Neauman measurement?
+\end{enumerate}
+
+
+\subsection*{Problem 2}
+Consider a qubit POVM
+\begin{equation}
+	M = \left\{\frac{1}{2}\ket{0}\bra{0}, \frac{1}{2}\ket{1}\bra{1}, \frac{1}{2}{\bf 1}\right\}
+\end{equation}
+(here ${\bf 1}$ is a $2\times 2$ identity matrix).
+\begin{enumerate}
+	\item Check that $M$ is a valid POVM.
+	\item Design a projective measurement, which corresponds to the given POVM, in an extended space obtained by considering qubit states as states of some 4-level system. 
+	\item Design a projective measurement, which corresponds to the given POVM, on a two qubit state $\rho\otimes\ket{0}\bra{0}$ (here $\rho$ is a states measured with POVM).
+\end{enumerate}
+
+
+\end{document}
