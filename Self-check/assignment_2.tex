@@ -40,16 +40,18 @@
 \end{center}
 
 \subsection*{Problem 1}
-Consider a qubit in arbitrary pure state $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$, and a ``probe'', which is also a qubit, in the initial state $\ket{0}$.
-Let the first qubit and the probe interact according to Hamiltonian 
+Consider a qubit in an arbitrary pure state $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$, and a ``probe'', which is also a qubit, in the initial state $\ket{0}$.
+Let the first qubit and the probe interact according to a Hamiltonian 
 \begin{equation}
 	V=\frac{1}{2}\sigma_{z}\otimes\sigma_{y}
 \end{equation} 
-for time $t$.
+for time $t$ (the first tensor factor corresponds to the first qubit, the second factor -- to the probe).
 Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (projection on $x$-axis).
 \begin{enumerate}
-	\item Find the probabilities of obtaining outcomes +1, and -1, corresponding ``collapsed'' states of the first qubit.
-	\item Find the state of the first qubit without information about the measurement outcome of the first probe.
+	\item Find evolution of initial states for cases ($\alpha=1, \beta=0$) and ($\alpha=0, \beta=1$). 
+	Draw evolutions of Bloch vectors for the system and the probe.
+	\item Find the probabilities of obtaining outcomes $\pm1$ and corresponding ``collapsed'' states of the first qubit.
+	\item Find the effective state of the first qubit without information about the measurement outcome of the probe. Compare it with the reduced state of the first system just before the measurement.
 	\item Write down a POVM that corresponds to this such indirect measurement. At which values of $t$ the measurement becomes projective von Neauman measurement?
 \end{enumerate}
 
