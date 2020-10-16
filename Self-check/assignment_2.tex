@@ -40,19 +40,29 @@
 \end{center}
 
 \subsection*{Problem 1}
-Consider a qubit in an arbitrary pure state $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$, and a ``probe'', which is also a qubit, in the initial state $\ket{0}$.
-Let the first qubit and the probe interact according to a Hamiltonian 
+Consider a qubit, called ``system'', in some pure state $\ket{\psi_{0}}$, and another qubit, called ``probe'', in the initial state $\ket{0}$.
+Let the system and the probe interact according to a Hamiltonian 
 \begin{equation}
 	V=\frac{1}{2}\sigma_{z}\otimes\sigma_{y}
 \end{equation} 
-for time $t$ (the first tensor factor corresponds to the first qubit, the second factor -- to the probe).
-Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (projection on $x$-axis).
+for time period $t$ (the first tensor factor corresponds to the first qubit, the second factor -- to the probe).
+Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (remember that it corresponds to projective $\sigma_{x}$measurement).
 \begin{enumerate}
-	\item Find evolution of initial states for cases ($\alpha=1, \beta=0$) and ($\alpha=0, \beta=1$). 
-	Draw evolutions of Bloch vectors for the system and the probe.
-	\item Find the probabilities of obtaining outcomes $\pm1$ and corresponding ``collapsed'' states of the first qubit.
-	\item Find the effective state of the first qubit without information about the measurement outcome of the probe. Compare it with the reduced state of the first system just before the measurement.
-	\item Write down a POVM that corresponds to this such indirect measurement. At which values of $t$ the measurement becomes projective von Neauman measurement?
+	\item Find evolution of the initial state for cases $\ket{\psi_{0}}=\ket{0}$ and $\ket{\psi_{0}}=\ket{1}$.
+	Draw pictures of evolution of Bloch vectors for the system and the probe for the both cases.
+	\item Consider the general case of $\ket{\psi_{0}}=\alpha\ket{0}+\beta\ket{1}$. Find the reduced state of the system and probe.
+	How do the Bloch vectors of the system and the probe evolve in this general case?
+	What we can say about entanglement between the system and the probe? (Remember, that entanglement of a pure bipartite state is characterized by mixedness of its parties).
+	\item Consider the case $\ket{\psi_{0}}=\ket{0}$ and find probabilities of obtaining outcomes $+1$ and $-1$ in the $\sigma_{x}$-measurement of the probe as function of time $t$.
+	What about the case $\ket{\psi_{0}}=\ket{1}$?
+	\item Let's consider the general case $\ket{\psi_{0}}=\alpha\ket{0}+\beta\ket{1}$ again. Let at time $t=\frac{\pi}{2}$ the probe be measured in the state $\ket{+}$ (with a corresponding outcome +1). What will be the resulting ``collapsed'' state of the system in this case? Consider the same story but with $t=\frac{\pi}{4}$. How the collapsed state changed?
+	\item Consider the case $\ket{\psi_{0}}=\ket{+}$ and $t=\frac{\pi}{2}$. Let the system be given to Alice, and the probe -- to Bob. Remember what is the state of Alice's particle (you have calculated it already).
+	Let Bob measure $\sigma_{x}$ of the probe, but keep the result of his measurement in a secret from Alice.
+	What is an ``effective'' state of Alice's particle (the system) without this information?
+	Let then Bob phone Alice and say that he obtained +1 outcome in his measurement (Bot is honest). 
+	What is the state of Alice's particle now?
+	\item Think a bit about the statement ``Information is physical'' :-)
+	\item Find POVM realized on the system by projective measurement of the probe $t=\frac{\pi}{2}$, $t=\frac{\pi}{4}$.
 \end{enumerate}
 
 
@@ -67,6 +77,7 @@ Consider a qubit POVM
 	\item Design a projective measurement, which corresponds to the given POVM, in an extended space obtained by considering qubit states as states of some 4-level system. 
 	\item Design a projective measurement, which corresponds to the given POVM, on a two qubit state $\rho\otimes\ket{0}\bra{0}$ (here $\rho$ is a states measured with POVM).
 \end{enumerate}
+
 
 
 \end{document}
