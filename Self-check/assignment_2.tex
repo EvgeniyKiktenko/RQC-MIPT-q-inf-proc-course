@@ -46,23 +46,23 @@ Let the system and the probe interact according to a Hamiltonian
 	V=\frac{1}{2}\sigma_{z}\otimes\sigma_{y}
 \end{equation} 
 for time period $t$ (the first tensor factor corresponds to the first qubit, the second factor -- to the probe).
-Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (remember that it corresponds to projective $\sigma_{x}$measurement).
+Let then the probe be measured in $\{\ket{+}, \ket{-}\}$ basis (remember, that it corresponds to projective $\sigma_{x}$measurement).
 \begin{enumerate}
 	\item Find evolution of the initial state for cases $\ket{\psi_{0}}=\ket{0}$ and $\ket{\psi_{0}}=\ket{1}$.
 	Draw pictures of evolution of Bloch vectors for the system and the probe for the both cases.
 	\item Consider the general case of $\ket{\psi_{0}}=\alpha\ket{0}+\beta\ket{1}$. Find the reduced state of the system and probe.
 	How do the Bloch vectors of the system and the probe evolve in this general case?
-	What we can say about entanglement between the system and the probe? (Remember, that entanglement of a pure bipartite state is characterized by mixedness of its parties).
+	What we can say about entanglement between the system and the probe? (Remember, that entanglement of a pure bipartite state is characterized by mixedness of its parties.)
 	\item Consider the case $\ket{\psi_{0}}=\ket{0}$ and find probabilities of obtaining outcomes $+1$ and $-1$ in the $\sigma_{x}$-measurement of the probe as function of time $t$.
 	What about the case $\ket{\psi_{0}}=\ket{1}$?
 	\item Let's consider the general case $\ket{\psi_{0}}=\alpha\ket{0}+\beta\ket{1}$ again. Let at time $t=\frac{\pi}{2}$ the probe be measured in the state $\ket{+}$ (with a corresponding outcome +1). What will be the resulting ``collapsed'' state of the system in this case? Consider the same story but with $t=\frac{\pi}{4}$. How the collapsed state changed?
 	\item Consider the case $\ket{\psi_{0}}=\ket{+}$ and $t=\frac{\pi}{2}$. Let the system be given to Alice, and the probe -- to Bob. Remember what is the state of Alice's particle (you have calculated it already).
 	Let Bob measure $\sigma_{x}$ of the probe, but keep the result of his measurement in a secret from Alice.
 	What is an ``effective'' state of Alice's particle (the system) without this information?
-	Let then Bob phone Alice and say that he obtained +1 outcome in his measurement (Bot is honest). 
+	Let then Bob phone Alice and tell that he obtained +1 outcome in his measurement (we assume that Bot is honest). 
 	What is the state of Alice's particle now?
 	\item Think a bit about the statement ``Information is physical'' :-)
-	\item Find POVM realized on the system by projective measurement of the probe $t=\frac{\pi}{2}$, $t=\frac{\pi}{4}$.
+	\item Find POVM realized on the system by projective measurement of the probe for $t=\frac{\pi}{2}$, $t=\frac{\pi}{4}$.
 \end{enumerate}
 
 
@@ -78,6 +78,11 @@ Consider a qubit POVM
 	\item Design a projective measurement, which corresponds to the given POVM, on a two qubit state $\rho\otimes\ket{0}\bra{0}$ (here $\rho$ is a states measured with POVM).
 \end{enumerate}
 
-
+\subsection*{Problem 3}
+Consider a realistic single-photon detector.
+Let the input state coming to detector live in the two-dimensional Hilbert space spanned by vectors $\ket{0}$ (no photon) and $\ket{1}$ (one photon).
+Our detector is characterized by two parameters: efficiency $\eta\in [0,1]$ (probability that incoming photon will be observed by the detector), and dark-count probability $p_{\rm dark}\in[0,1]$ (probability that in a given time-window the detector will ``click'' regardless presence of photon in the input channel).
+Write down POVM elements corresponding to outcomes ``click'' and ``no click'' of the detector.
+How the POVM will change if we extend the space of input states to higher photon numbers ($\ket{2}, \ket{3}, \ldots$)?
 
 \end{document}
