@@ -78,6 +78,7 @@ Consider a qubit POVM
 	\item Design a projective measurement, which corresponds to the given POVM, on a two qubit state $\rho\otimes\ket{0}\bra{0}$ (here $\rho$ is a states measured with POVM).
 \end{enumerate}
 
+
 \subsection*{Problem 3}
 Consider a realistic single-photon detector.
 Let the input state coming to detector live in the two-dimensional Hilbert space spanned by vectors $\ket{0}$ (no photon) and $\ket{1}$ (one photon).
@@ -88,11 +89,24 @@ How the POVM will change if we extend the space of input states to higher photon
 \subsection*{Problem 4}
 Design a construction of SIC-POVM elements for arbitrary $d$-dimensional Hilbert space ($d>2$).
 
+
 \subsection*{Problem 5}
+Consider a three-qubit system where the first qubit is prepared in an arbitrary state $\rho$ and two other qubits in the fixed state $\ket{00}_{2,3}$.
+Let the initial state of qubits be affected by unitary operator
+\begin{equation}
+	U = \ket{000}_{1,2,3}\bra{000} +  \ket{111}_{1,2,3}\bra{100} + \ldots.
+\end{equation}
+Find Kraus operators of a map $\Phi_{1\rightarrow 3}[\cdot]$ which outputs the resulting state of the third qubit depending on the initial state of the first qubit $\rho$.
+Find Kraus operators of a dual map $\Phi_{1\rightarrow (1,2)}[\cdot]$ which outputs the resulting state of the first and the second qubits depending on the initial state of the first qubit $\rho$.
+Check that the obtained operators satisfy normalization condition.
+
+
+\subsection*{Problem 6}
 Let $\Phi[\rho]=\sum_{i}A_{i}\rho A_{i}^{\dagger}$ be a CPTP map.
 Show that $\Phi[\rho]=\sum_{i}B_{i}\rho B_{i}^{\dagger}$ for $B_{i}=\sum_{i}u_{ij}A_{j}$, where $u_{ij}$ are elements of some unitary matrix.
 
-\subsection*{Problem 6}
+
+\subsection*{Problem 7}
 Consider a CPTP map $\Phi[\cdot]$ and a corresponding Choi state
 \begin{equation}
 	\rho_{\rm Choi} = \sum_{i,j} \ket{i}_{1}\bra{j}\otimes\Phi[\ket{i}_{2}\bra{j}]
@@ -105,7 +119,8 @@ Show that the action of $\Phi[\cdot]$ on some input state $\rho$ is given by
 \end{equation}
 where ${\rm T}_{1}$ stands for a partial transpose in ``the first space''.
 
-\subsection*{Problem 7}
+
+\subsection*{Problem 8}
 Consider a single-qubit Pauli transformation 
 \begin{equation}
 	\rho\rightarrow \sigma_{\alpha}\rho\sigma_{\alpha}, \quad \alpha\in\{x,y,z\}.
@@ -121,7 +136,7 @@ for any $\rho$.
 {\bf Hint}: decompose $\rho$ in sum of terms with Pauli matrices.
 
 
-\subsection*{Problem 8}
+\subsection*{Problem 9}
 Write Choi matrices for dephasing, depolarizing, and damping channels.
 
 \end{document}
