@@ -85,4 +85,43 @@ Our detector is characterized by two parameters: efficiency $\eta\in [0,1]$ (pro
 Write down POVM elements corresponding to outcomes ``click'' and ``no click'' of the detector.
 How the POVM will change if we extend the space of input states to higher photon numbers ($\ket{2}, \ket{3}, \ldots$)?
 
+\subsection*{Problem 4}
+Design a construction of SIC-POVM elements for arbitrary $d$-dimensional Hilbert space ($d>2$).
+
+\subsection*{Problem 5}
+Let $\Phi[\rho]=\sum_{i}A_{i}\rho A_{i}^{\dagger}$ be a CPTP map.
+Show that $\Phi[\rho]=\sum_{i}B_{i}\rho B_{i}^{\dagger}$ for $B_{i}=\sum_{i}u_{ij}A_{j}$, where $u_{ij}$ are elements of some unitary matrix.
+
+\subsection*{Problem 6}
+Consider a CPTP map $\Phi[\cdot]$ and a corresponding Choi state
+\begin{equation}
+	\rho_{\rm Choi} = \sum_{i,j} \ket{i}_{1}\bra{j}\otimes\Phi[\ket{i}_{2}\bra{j}]
+\end{equation}
+(here $\{\ket{i}\}$ is a orthonormal basis for the Hilbert space of inputs).
+Show that the action of $\Phi[\cdot]$ on some input state $\rho$ is given by
+\begin{equation}
+	\Phi[\rho]=\tr_{1}(\rho\otimes {\bf 1} \rho_{\rm Choi}^{\rm T_{1}})=
+	\tr_{1}(\rho^{\rm T_{1}}\otimes {\bf 1} \rho_{\rm Choi}),
+\end{equation}
+where ${\rm T}_{1}$ stands for a partial transpose in ``the first space''.
+
+\subsection*{Problem 7}
+Consider a single-qubit Pauli transformation 
+\begin{equation}
+	\rho\rightarrow \sigma_{\alpha}\rho\sigma_{\alpha}, \quad \alpha\in\{x,y,z\}.
+\end{equation}
+How this transformation affects the Bloch vector of $\rho$?
+
+Show that 
+\begin{equation}
+	\frac{1}{4}\left({\bf 1}\rho{\bf 1}+\sum_{\alpha\in\{x,y,z\}}\sigma_{\alpha}\rho\sigma_{\alpha}\right) = \frac{\bf 1}{2}
+\end{equation}
+for any $\rho$.
+
+{\bf Hint}: decompose $\rho$ in sum of terms with Pauli matrices.
+
+
+\subsection*{Problem 8}
+Write Choi matrices for dephasing, depolarizing, and damping channels.
+
 \end{document}
